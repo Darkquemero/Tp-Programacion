@@ -1,0 +1,238 @@
+#include<stdio.h>
+#include<conio.h>
+#include<iostream>
+#include<string.h>
+
+int main()
+{
+  
+   //Declaracion.
+   int legajo[81],mes[81],Categoria[81],horas[81],validar;
+   int intentos=0;
+   int i=0;
+   int a=0;
+   int CodCate;
+   int Sdo;
+   int Hs;
+   int opc;
+   int VCodCate[80];
+   int VHoras[7];
+   int VSueldo[7];
+   int Nleg;
+   int HsExtras;
+   int Mes;
+   char VDescripcion[7];
+   char Desc[30];
+   char usuario[12];
+   char pass[8];
+   char VMes[18];
+   
+   // Usuario y Contraseña
+   
+//Do While para peticion de usuario.
+   
+   do
+   {
+     printf("Ingrese Usuario: \n");  
+     fflush(stdin);
+     gets(usuario);
+   }while(strcmp(usuario,"TpUai") != 0);
+   
+//Do While para peticion de contraseña.
+   
+   do    
+    {
+     printf("Ingrese Contrase%ca: "); 
+     printf("\n");
+     fflush(stdin);
+     gets(pass);  
+     ++intentos;
+    }while(strcmp(pass,"Tp2") != 0 && intentos < 3);
+  
+//Negar Acceso al superar los intentos.
+	
+	if(intentos == 3) 
+	{
+		printf("Usted ya a Intentado el Numero maximo de veces por favor salga y vuelva a intentar. \n");
+		system("pause");
+    }
+	
+   // Menu 
+    
+//Si no se supero el limite de intentos.
+	
+	else  
+	{
+      do
+       {
+         system("cls");
+         printf("Menu de Opciones \n \n");
+         printf("0. Ingreso de Datos \n");
+         printf("1. ... \n");
+         printf("2. ... \n");
+         printf("3. ... \n");
+         printf("4. ... \n");
+         printf("5. ... \n");
+         printf("6. ... \n");
+         printf("7. ... \n");
+         printf("8. ... \n");
+         printf("9. ... \n");
+         printf("10. Salir \n");
+         printf("Ingrese Opcion A Elegir: ");
+         scanf("%d",&opc);
+        
+   // Opciones de Menu.
+   
+// CodCate = Codigo de Categoria; Desc = Descripcion; Sdo = Sueldo;Hs = Valor de las Horas extras.
+	
+	
+	
+	switch(opc)
+        {
+             
+//Carga de Datos y Peticion Obligatoria para cargar datos 1 sola vez.
+			 
+			 case 0: 
+                   
+                if(a == 1)
+				  {
+					
+					system("cls");
+					
+					printf("Ya Cargaste los datos Por favor vuelva a intentar. \n");
+					
+					getch();
+				  }
+				    else
+				      {
+				        if(a == 0)
+				          {
+					         a = 1;
+						     
+							 system("cls");
+						  }
+                
+				            for(i = 1; i <= 6; i++) 
+				              {
+					            Categoria[81] = i;
+						               					
+					            printf("La Categoria es %d \n",i);
+				   
+					            printf("Ingrese Descripcion: ");
+					            fflush(stdin);
+					            gets(Desc);
+					
+					            printf("Sueldo Basico de la Categoria: ");
+					            scanf("%d",&Sdo);
+					
+					            printf("Valor de las Horas Extras: ");
+					            scanf("%d",&Hs);
+					
+					            printf("\n\n");
+					
+				              }          
+		 		   
+				              printf("Carga Completa presione cualquier tecla para continuar. \n\n");
+							  system("pause");
+                              getch();
+				      }
+			 getch();
+		     break;
+			  
+//Carga de Datos del Personal			  
+	
+//Nleg = Numero de Legajo; HsExtras = Horas Extras; Mes = Mes
+
+	VMes[Mes] = Mes;			
+			
+			 case 1:
+                   
+
+					if(a==0)
+						{
+							printf("ingrese el primer punto antes.");
+						}
+						else
+							{
+								system("cls");
+                   				do
+									{	
+										while(i!=100)
+											{
+												
+												printf("ingrese los datos del empleado %d \n",i);	
+												
+                                                do
+												{										                                                   
+                                                    printf("ingrese numero de legajo \n");
+													scanf("%d",&legajo[i]);
+													printf("\n%d",legajo[i]);													
+												}while(legajo[i]<1||legajo[i]>80);												
+                                                                                               
+                                                do
+												{                                                 
+													printf("ingrese la categoria entre 1 y 6 \n");
+													scanf("%d",&Categoria[i]);
+													printf("%d",Categoria[i]);
+												}while(Categoria[i]<1 || Categoria[i]>6);
+
+													printf("cantidad de horas trabajadas");
+													scanf("%d",&horas[i]);
+
+												do
+												{													
+													printf("ingrese el mes");
+													scanf("%d",&mes[i]);		
+												}while(mes[i]<1&&mes[i]>12);
+                                        }
+                                        }			
+										break;
+			
+			 case 2:
+			         system("cls");
+					 getch();
+					 break;
+			 case 3:
+					 system("cls");
+					 getch();
+					 break;
+			 case 4:
+					 system("cls");
+					 getch();
+					 break;
+			 case 5:
+					 system("cls");
+					 getch();
+					 break;
+			 case 6:
+					 system("cls");
+					 getch();
+					 break;
+			 case 7:
+					 system("cls");
+					 getch();
+					 break;
+			 case 8:
+					 system("cls");
+					 getch();
+					 break;
+			 case 9:
+					 system("cls");
+					 getch();
+					 break;
+			 case 10:
+					 system("cls");
+					 getch();
+					 break;
+	       
+        }while(opc!=10);    
+    
+	}
+     
+	 system("pause");
+     return 0 ;
+
+//default opc 
+    
+                                               
+}
